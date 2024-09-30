@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Threading; // Necessário para usar Thread.Sleep
+using System.Threading; 
 
 namespace BrigaDeRua
 {
@@ -17,7 +17,7 @@ namespace BrigaDeRua
             // Pausa de 2 segundos após o método RecommendButtonSmashingTactic() antes de mostrar os golpes
             Thread.Sleep(2000);
 
-            // Se o jogador não for familiar com o jogo, então ele recebe os golpes
+            // Se o jogador não tiver familiaridade com o jogo, ele recebe uma sequência de movimentos
             if (!isFamiliar)
             {
                 BrigaDeRuaFight fight = new BrigaDeRuaFight();
@@ -83,7 +83,7 @@ namespace BrigaDeRua
             {
                 List<FighterMovesList> output = new List<FighterMovesList>();
 
-                // Simulando que o jogador recebe um conjunto de 3 golpes aleatórios para a luta
+                // O jogador recebe um conjunto de 3 golpes aleatórios para a partida
                 for (int i = 0; i < 3; i++)
                 {
                     output.Add(PickOneRandomMove());
@@ -111,7 +111,7 @@ namespace BrigaDeRua
                     return false; // O jogador não está familiarizado com o jogo
                 }
 
-                // Caso o jogador digite algo inválido, tratamos como se ele não soubesse jogar
+                // Caso o jogador digite algo inválido interpreta-se como se ele não soubesse jogar
                 Console.WriteLine("Resposta não reconhecida, vamos assumir que você precisa de ajuda.");
                 RecommendButtonSmashingTactic();
                 return false;
